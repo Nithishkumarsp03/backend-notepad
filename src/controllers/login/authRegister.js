@@ -29,7 +29,7 @@ const register = async (req, res) => {
 
     // Insert new user
     const insertQuery = `
-      INSERT INTO login (name, email, password, "2FA", gender, category_id)
+      INSERT INTO login (name, email, password, two-fa, gender, category_id)
       VALUES ($1, $2, $3, $4, $5, $6)
       RETURNING id, name, email
     `;
