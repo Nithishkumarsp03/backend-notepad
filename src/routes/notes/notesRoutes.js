@@ -8,6 +8,6 @@ const deleteNotes = require('../../controllers/notes/deleteNotes')
 router.post('/addnote', addController.addnewnote);
 router.post('/fetchnotes', fetchnotesController.fetchNotes);
 router.post('/editnotes', editNotes.editNotes);
-router.post('/deletenotes', deleteNotes.deleteNotes);
+router.delete('/deletenotes', deleteNotes.deleteNotes);
 
 module.exports = router;
