@@ -3,6 +3,7 @@ const db = require("../../config/db");
 const addNewNoteDetails = async (req, res) => {
   try {
     const { loginId, noteId, notes } = req.body;
+    console.log(req.body)
 
     if (!loginId) {
       return res.status(400).json({ message: "Login ID is required." });

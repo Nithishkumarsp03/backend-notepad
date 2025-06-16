@@ -2,6 +2,7 @@ const db = require("../../config/db");
 
 const addnewnote = async (req, res) => {
   const { notename, loginId } = req.body;
+  console.log(req.body)
 
   // Basic validation
   if (!notename || !loginId) {
