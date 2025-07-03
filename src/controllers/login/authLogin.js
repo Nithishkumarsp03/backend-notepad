@@ -55,10 +55,42 @@ const login = (req, res) => {
         });
 
         await transporter.sendMail({
-          from: `"Notepad" <${process.env.EMAIL_USER}>`,
+          from: `"SPNotz" <${process.env.EMAIL_USER}>`,
           to: user.email,
-          subject: "Your OTP Code",
+          subject: "🔐 Your OTP Code from SPNotz",
           text: `Your OTP code is ${otp}. It is valid for 5 minutes.`,
+          html: `
+    <div style="font-family: 'Segoe UI', sans-serif; padding: 30px; max-width: 600px; margin: auto; background-color: #f9f9f9; border-radius: 10px; border: 1px solid #e0e0e0;">
+      
+      <!-- Logo -->
+      <div style="text-align: center; margin-bottom: 20px;">
+        <img src="https://backend-notepad.vercel.app/logo.png" alt="SPNotz Logo" style="max-width: 150px;" />
+      </div>
+
+      <h2 style="color: #2f855a; text-align: center;">🔐 One-Time Password (OTP)</h2>
+      
+      <p style="font-size: 16px; color: #333; text-align: center;">
+        Use the following OTP to proceed with your verification.
+      </p>
+
+      <div style="margin: 30px 0; text-align: center;">
+        <span style="display: inline-block; font-size: 28px; font-weight: bold; letter-spacing: 5px; color: #2d3748; padding: 15px 30px; background-color: #edf2f7; border: 2px dashed #2f855a; border-radius: 8px;">
+          ${otp}
+        </span>
+      </div>
+
+      <p style="font-size: 14px; color: #666; text-align: center;">
+        This OTP is valid for <strong>5 minutes</strong>.<br />
+        If you did not request this, please ignore this email.
+      </p>
+
+      <hr style="margin: 40px 0; border: none; border-top: 1px solid #ddd;" />
+
+      <p style="font-size: 12px; color: #999; text-align: center;">
+        © ${new Date().getFullYear()} SPNotz. All rights reserved.
+      </p>
+    </div>
+  `,
         });
 
         return res.status(200).json({
