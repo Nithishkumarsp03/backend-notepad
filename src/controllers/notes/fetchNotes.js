@@ -12,7 +12,12 @@ const fetchNotes = async (req, res) => {
   }
 
   try {
-    const query = "SELECT id, note_name, uuid FROM notes_table WHERE login_id = $1";
+    const query = `SELECT id, note_name, uuid 
+FROM notes_table 
+WHERE login_id = $1 
+ORDER BY updated_ar DESC 
+LIMIT 1;
+;`
     const { rows } = await db.query(query, [loginId]);
 
     if (rows.length === 0) {
