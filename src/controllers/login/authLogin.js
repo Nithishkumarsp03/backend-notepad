@@ -64,7 +64,7 @@ const login = (req, res) => {
       
       <!-- Logo -->
       <div style="text-align: center; margin-bottom: 20px;">
-        <img src="https://backend-notepad.vercel.app/logo" alt="SPNotz Logo" style="max-width: 150px;" />
+        <img src="https://api-spnotz.vercel.app/logo" alt="SPNotz Logo" style="max-width: 150px;" />
       </div>
 
       <h2 style="color: #2f855a; text-align: center;">🔐 One-Time Password (OTP)</h2>

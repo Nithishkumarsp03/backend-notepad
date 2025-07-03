@@ -23,6 +23,9 @@ app.use(bodyParser.json());
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
+app.get("/reset-password/:token", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "resetpassword.html"));
+});
 app.get("/logo", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "SpNotz.png"));
 })
