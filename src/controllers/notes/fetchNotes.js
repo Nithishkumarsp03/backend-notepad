@@ -15,7 +15,7 @@ const fetchNotes = async (req, res) => {
     const query = `SELECT id, note_name, uuid 
 FROM notes_table 
 WHERE login_id = $1 
-ORDER BY updated_ar DESC 
+ORDER BY updated_at DESC 
 LIMIT 1;
 ;`
     const { rows } = await db.query(query, [loginId]);
