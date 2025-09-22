@@ -14,4 +14,4 @@ router.post("/check-otp", verifyOtp.verifyOtp);
 router.post("/request-reset", requestReset.requestReset);
 router.post("/reset-password" , resetPassword.resetPassword);
 
-module.exports = router;
+module.exports = router; 
