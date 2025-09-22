@@ -30,4 +30,4 @@ const editNotes = async (req, res) => {
   }
 };
 
-module.exports = { editNotes };
+module.exports = { editNotes }; 
