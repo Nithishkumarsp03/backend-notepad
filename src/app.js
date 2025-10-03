@@ -10,7 +10,7 @@ const otherRoutes = require('./routes/others/otherRoutes');
 const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-
+ 
 const api = process.env.API;
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors({
